@@ -248,7 +248,7 @@ export const useScreenerStore = create<ScreenerStore>()(
               const prev = a.sentBySymbol ?? {}
               const next: Record<string, number> = { ...prev }
               for (const sym of setMap) {
-                next[sym] = now
+                next[sym as string] = now
               }
               return { ...a, lastTriggered: now, sentBySymbol: next }
             }),

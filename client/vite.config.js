@@ -6,9 +6,8 @@ export default defineConfig({
         port: 5173,
         proxy: {
             '/api/bybit': {
-                target: 'http://localhost:3001',
+                target: 'http://localhost:4001',
                 changeOrigin: true,
-                secure: false,
             },
             '/api/alerts': {
                 target: 'http://localhost:4001',
