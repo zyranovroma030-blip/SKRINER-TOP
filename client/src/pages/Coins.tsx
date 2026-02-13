@@ -15,9 +15,6 @@ function notifyTelegram(telegramChatId: string, text: string) {
   }).catch(() => {})
 }
 
-// Глобальный кэш для хранения данных графиков
-const _chartDataCache = new Map<string, any[]>()
-
 export default function Coins() {
   const { symbol: symbolFromUrl } = useParams<{ symbol: string }>()
   const [searchParams] = useSearchParams()
