@@ -1,0 +1,319 @@
+.wrap {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  flex-direction: row;
+}
+
+.chartArea {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: auto;
+  margin-right: -1px;
+}
+
+.chartToolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.chartToolbar .symbolInput {
+  width: 160px;
+}
+
+.sidebar {
+  width: 320px;
+  flex-shrink: 0;
+  padding: 16px 12px;
+  border-left: 1px solid var(--border);
+  background: var(--bg-panel);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.symbolRow {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.symbolInput {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.indicatorBtn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.indicatorBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.addAlertActive {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  background: rgba(124, 58, 237, 0.2);
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.tfRow {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.tfBtn,
+.tfActive {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-muted);
+}
+
+.tfBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.tfActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.chartLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.favoriteBtnChart {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+  transition: all 0.2s;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-left: 12px;
+}
+
+.favoriteBtnChart:hover {
+  color: #fbbf24;
+  transform: scale(1.1);
+}
+
+.favoriteBtnChartActive {
+  color: #fbbf24;
+  border-color: #fbbf24;
+}
+
+.chart {
+  width: 100%;
+  height: min(620px, calc(100vh - 220px));
+  min-height: 730px;
+  max-height: 720px;
+  position: relative;
+}
+
+.chartLoading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--accent);
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.techBlockTop {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.techGridTop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+  background: var(--bg-panel);
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.techItemTop {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 4px 6px;
+}
+
+.techItemTop span:last-child {
+  color: var(--text);
+  font-weight: 600;
+}
+
+
+.techOverlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px 12px;
+  background: var(--bg-panel);
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  z-index: 40;
+  min-width: 200px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 900px) {
+  .techOverlay { display: none; }
+}
+
+.tableWrap {
+  flex: 1;
+  overflow: auto;
+}
+
+.tableHeader {
+  font-weight: 600;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.sortButtons {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.sortBtn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.sortBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.sortActive {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.favoriteBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  transition: color 0.2s;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.favoriteRow {
+  background: rgba(251, 191, 36, 0.1);
+}
+
+.favoriteBtn:hover {
+  color: #fbbf24;
+}
+
+.table th {
+  text-align: left;
+  padding: 10px 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.table tbody tr:hover {
+  background: var(--bg-hover);
+}
+
+.table tbody tr.selected {
+  background: rgba(124, 58, 237, 0.15);
+}

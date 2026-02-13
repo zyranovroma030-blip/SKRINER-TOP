@@ -1,0 +1,532 @@
+.container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.headerLeft h1 {
+  margin: 0 0 8px 0;
+  color: var(--text);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.headerLeft p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 24px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  min-width: 80px;
+}
+
+.statNumber {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Header Buttons */
+.headerButtons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.createButton, .settingsButton, .logsButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.createButton {
+  background: var(--accent);
+  color: white;
+}
+
+.createButton:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.settingsButton {
+  background: var(--bg-secondary);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.settingsButton:hover {
+  background: var(--bg-hover);
+  transform: translateY(-1px);
+}
+
+.logsButton {
+  background: var(--bg-secondary);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.logsButton:hover {
+  background: var(--bg-hover);
+  transform: translateY(-1px);
+}
+
+.buttonIcon {
+  font-size: 18px;
+}
+
+/* Content */
+.content {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* System Status */
+.systemStatus {
+  display: flex;
+  gap: 24px;
+  padding: 16px 24px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.statusItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.statusLabel {
+  color: var(--text-muted);
+}
+
+.statusOk {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.statusError {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Checking Indicator */
+.checkingIndicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Logs Section */
+.logsSection {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+.logsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.logsHeader h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.logsActions {
+  display: flex;
+  gap: 8px;
+}
+
+.clearLogsBtn, .refreshLogsBtn {
+  padding: 6px 12px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.refreshLogsBtn {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.refreshLogsBtn:hover {
+  background: var(--accent-hover);
+}
+
+.clearLogsBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.logsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.logItem {
+  padding: 12px 16px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.logError {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.logTime {
+  color: var(--text-muted);
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.logAlert {
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.logStats {
+  color: var(--text-muted);
+}
+
+.logSent {
+  color: var(--accent);
+}
+
+.logErrorText {
+  color: #ef4444;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+/* Modals */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modalHeader h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.closeButton:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.modalContent {
+  padding: 24px;
+}
+
+.modalContent p {
+  margin: 0 0 20px 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Alert Types */
+.alertTypes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.alertType {
+  padding: 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.alertType:hover {
+  background: var(--bg-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.alertType h3 {
+  margin: 0 0 8px 0;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.alertType p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Settings */
+.settingsSection {
+  margin-bottom: 24px;
+}
+
+.settingsSection h3 {
+  margin: 0 0 16px 0;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.settingItem {
+  margin-bottom: 16px;
+}
+
+.settingItem label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input, .select {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.input:focus, .select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+/* Modal Actions */
+.modalActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  margin-top: 24px;
+}
+
+.cancelButton, .primaryButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.cancelButton {
+  background: var(--bg-secondary);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.cancelButton:hover {
+  background: var(--bg-hover);
+}
+
+.primaryButton {
+  background: var(--accent);
+  color: white;
+}
+
+.primaryButton:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+  
+  .headerContent {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .stats {
+    justify-content: space-around;
+  }
+  
+  .headerButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .createButton, .settingsButton {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .alertTypes {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal {
+    width: 95%;
+    margin: 12px;
+  }
+  
+  .modalContent {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerLeft h1 {
+    font-size: 24px;
+  }
+  
+  .statItem {
+    padding: 12px;
+    min-width: 60px;
+  }
+  
+  .statNumber {
+    font-size: 20px;
+  }
+  
+  .statLabel {
+    font-size: 10px;
+  }
+}

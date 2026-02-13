@@ -1,0 +1,151 @@
+.wrap {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: 100vh; /* Устанавливаем полную высоту */
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  background: var(--bg-panel);
+  border-right: 1px solid var(--border);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.sidebarCollapsed {
+  width: 48px;
+  padding: 16px 8px;
+  align-items: center;
+}
+
+.collapseBtn {
+  position: absolute;
+  top: 12px;
+  right: -14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  color: var(--text-muted);
+}
+
+.collapseBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.section {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.sectionTitle {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.tag {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--bg-hover);
+  color: var(--text-muted);
+}
+
+.sectionIcons {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+}
+
+.sectionIcons button {
+  padding: 4px;
+  border-radius: 6px;
+  color: var(--text-muted);
+}
+
+.sectionIcons button:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.presetBtn {
+  width: 100%;
+  padding: 8px 10px;
+  text-align: left;
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.presetBtn:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.presetBtn.active {
+  background: rgba(124, 58, 237, 0.2);
+  color: var(--accent);
+}
+
+.createBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px dashed var(--border);
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: auto;
+}
+
+.createBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.main {
+  flex: 1;
+  overflow: auto;
+  padding: 20px;
+  min-height: 0; /* Важно для правильной работы overflow */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+  min-height: min-content; /* Позволяет сетке растягиваться */
+}
+
+.loading,
+.error {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.error {
+  color: var(--red);
+}

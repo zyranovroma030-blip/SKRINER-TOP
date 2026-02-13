@@ -1,0 +1,5 @@
+# Force Vercel to rebuild
+.vercel
+node_modules
+dist
+build
