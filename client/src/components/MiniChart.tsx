@@ -20,7 +20,7 @@ interface MiniChartProps {
 }
 
 export default function MiniChart({ symbol, timeframe, candleCount = 50, onExpand, volume24h, change24hPct, volatility24hPct, className }: MiniChartProps) {
-  const { smartAlerts, addSmartAlert, addFavoriteCoin, removeFavoriteCoin, isFavoriteCoin } = useScreenerStore()
+  const { addFavoriteCoin, removeFavoriteCoin, isFavoriteCoin } = useScreenerStore()
   const containerRef = useRef<HTMLDivElement>(null)
   const chartRef = useRef<IChartApi | null>(null)
   const seriesRef = useRef<ISeriesApi<'Candlestick'> | null>(null)
